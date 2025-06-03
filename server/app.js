@@ -4,7 +4,7 @@ const cors = require("cors")
 require("dotenv").config()
 const { GoogleGenAI } = require('@google/genai');
 
-const ai = new GoogleGenAI({ apiKey: "AIzaSyAseZx8d3qyz_J0GOp5jQ9GBPWNz8EpKF8" });
+const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
 async function main(data) {
   const response = await ai.models.generateContent({
